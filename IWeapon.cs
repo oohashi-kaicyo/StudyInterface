@@ -3,6 +3,6 @@ namespace StudyInterface
 {
     public interface IWeapon
     {
-        
+        int Atk { get; }
     }
 }

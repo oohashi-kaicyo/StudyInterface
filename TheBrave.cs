@@ -1,14 +1,17 @@
 ﻿using System;
+using StudyInterface.Properties;
+
 namespace StudyInterface
 {
-    public class TheBrave
+    public class TheBrave: ICharacteristic
     {
         public int[] JyoutaiIjyo { get; set; }
-        private Equipment[] equipments; 
+        public string[] Characteristic { get; }
+		private Equipment[] equipments; 
         public Equipment[] Equipments {
             get {
                 return equipments;
-            } 
+            }
             set {
                 // この書き方だと，装備の種類が増えるたびに書き換える必要がある気が......
                 // 武器種は大別だからいいか
@@ -16,9 +19,9 @@ namespace StudyInterface
                     // もし攻撃魔法ならXXに格納
                 }
                 equipments = value;
-            } 
+            }
         }
-		public TheBrave() {
+        public TheBrave() {
             Equipments = new Equipment[4];
             Equip(new JourneySword(),  0);
             Equip(new JourneyShield(), 1);
@@ -39,12 +42,21 @@ namespace StudyInterface
 			}
             Equipments[idx].Help();
         }
-        public void Attack() {
+        // 1:1ではなく1:Nの場合
+        public void Attack(/*ref エネミー*/) {
             // もし装備品を所持していない場合
-            Console.WriteLine("勇者の攻撃");
-            IWeapon wepon = new JourneySword();
-
-
+            //Console.WriteLine("勇者の攻撃");
+            JourneySword wepon = new JourneySword();
+			// ダメージクラス
+			// クラスに分ける理由
+			//new DamergeManager(this, enermy);
+			// たとえば，ダメージを予測するメソッドにも実装可能
+			// 計算式(相性計算)
+			// wepon.Atkや属性，敵の属性からダメージ計算
+			// 相手のHPを削る
+			// 勇者がエネミーA1に対して攻撃
+			// theBrave.Attack(enemyA1);
+			// 使用者は，この内側の設計がどうなっているかを考慮する必要はない
 		}
     }
 }
