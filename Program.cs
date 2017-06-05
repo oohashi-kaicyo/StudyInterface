@@ -15,10 +15,8 @@ namespace StudyInterface
                 theBrave.Equipments[idx].Help();
                 if(theBrave.Equipments[idx].GetType() == typeof(JourneySword)) {
                     // 攻撃
-
                 }
             }
-            //theBrave.useEquipment(0);
         }
     }
 }
