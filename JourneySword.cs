@@ -1,9 +1,8 @@
 ﻿using System;
-using StudyInterface.Properties;
 
 namespace StudyInterface
 {
-    public class JourneySword: Equipment, IWeapon, ICharacteristic
+    public class JourneySword: /*Equipment,*/ IWeapon
     {
         public int Atk { get; private set; }
         public String[] Characteristic {get;}

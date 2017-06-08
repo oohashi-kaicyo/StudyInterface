@@ -22,7 +22,6 @@ namespace StudyInterface
             //Equip(new JourneySword(),  0);
             //Equip(new JourneyShield(), 1);
             Characteristic = new string[]{"無", "人間"};
-            weapon = new JourneySword();
 		}
 		//public void Equip(Equipment equipment, int idx) {
         //    int equipableIdx = Equipments.Length - 1;

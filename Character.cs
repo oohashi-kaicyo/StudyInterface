@@ -1,16 +1,16 @@
 ﻿using System;
-using StudyInterface.Properties;
 
 namespace StudyInterface
 {
-    public abstract class Character: ICharacteristic
+    public abstract class Character
     {
-        public int Hp { get; set; }
-        public IWeapon weapon { get; set; }
+        public int      Hp             { get; set; }
+        public IWeapon  Weapon         { get; set; }
 		public string[] Characteristic { get; set; }
+        // virtualを付与しなければ，これが用いられる
 		public void Attack(ref Character enemy) {
-			Character _this = this;
-			Damage damage = new Damage(ref _this, ref enemy);
+			Character myself = this;
+			Damage damage = new Damage(ref myself, ref enemy);
 		}
 	}
 }
