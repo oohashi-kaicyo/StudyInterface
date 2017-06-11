@@ -3,7 +3,7 @@ namespace StudyInterface
 {
     public class Damage
     {
-        public Damage(ref BattleCharacter myself, /*何で攻撃するか*/ ref BattleCharacter[] enemies) {
+        public Damage(ref BattleCharacter myself, ref BattleCharacter[] enemies) {
             this.Calc(ref myself, ref enemies);
         }
         private void Calc(ref BattleCharacter myself, ref BattleCharacter[] enemies) {
@@ -15,11 +15,11 @@ namespace StudyInterface
                 myselfAttackObject = myself.GrabedWeapon;
             }
 			int attackPoint = myselfAttackObject.AttackPont;
-			//Characteristic[] myselfCharacteristices = myselfAttackObject.Characteristic;
+            Characteristic[] myselfCharacteristices = myselfAttackObject.Characteristices;
             foreach (BattleCharacter enemy in enemies) {
-                //Characteristic[] enemyCharacteristices = enemy.Characteristic;
-                /* TODO 特攻が刺さるか判定 */
-                attackPoint *= 1;
+				Characteristic[] enemyCharacteristices = enemy.Characteristices;
+				/* TODO 特攻が刺さるか判定 */
+				attackPoint *= 1;
                 int damagePoint = attackPoint;
                 enemy.Hp -= damagePoint;
             }
