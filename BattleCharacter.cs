@@ -2,14 +2,23 @@
 
 namespace StudyInterface
 {
-    public abstract class BattleCharacter
+    public abstract class BattleCharacter: IAttack, ICharacteristic, IAttackPoint
     {
-        public int      Hp             { get; set; }
-        public IWeapon  Weapon         { get; set; }
-		public string[] Characteristic { get; set; }
-		public void Attack(ref BattleCharacter enemy) {
+        public  int              Hp               { get; set; }
+		public  int              Level            { get; set; }
+		public  IWeapon          GrabedWeapon     { get; set; }
+        public  Characteristic[] Characteristices { get; set; }
+        public  Slot[]           Slots            { get; set; }
+		public  int              AttackPont       { get; set; }
+		public virtual void Equip(int slotIdx, IEquipment equipment) {
+            if (Slots.Length <= slotIdx) {
+                return;    
+            }
+            Slots[slotIdx].Equipment = equipment;
+        }
+        public virtual void Attack(ref BattleCharacter[] enemies) {
 			BattleCharacter myself = this;
-			Damage damage = new Damage(ref myself, ref enemy);
+			Damage damage = new Damage(ref myself, ref enemies);
 		}
 	}
 }

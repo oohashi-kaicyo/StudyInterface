@@ -4,11 +4,11 @@ namespace StudyInterface
 {
     public class JourneySword: IWeapon
     {
-        public int Atk { get; private set; }
-        public String[] Characteristic {get;}
-        public JourneySword() {
-            Atk = 10;
-            Characteristic = new string[] {"竜属性特攻", "闇属性特攻"};
+        public Characteristic[] Characteristices { get; set; }
+		public int AttackPont { get; }
+		public JourneySword() {
+            AttackPont = 1;
+            Characteristices = new Characteristic[] {Characteristic.noAttribute};
         }
     }
 }

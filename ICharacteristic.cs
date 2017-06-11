@@ -1,8 +1,15 @@
-﻿﻿using System;
-namespace StudyInterface.Properties
+﻿using System;
+namespace StudyInterface
 {
+    public enum Characteristic {
+        dragonAttributesSpecialAttack,
+        darknessAttributesSpecialAttack,
+        pairMagicalPower,
+        noAttribute,
+        human
+    }
     public interface ICharacteristic
     {
-		String[] Characteristic { get; }
+        Characteristic[] Characteristices { get; set; }
 	}
 }

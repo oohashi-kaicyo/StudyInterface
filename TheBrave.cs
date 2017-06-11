@@ -5,7 +5,18 @@ namespace StudyInterface
     public class TheBrave: BattleCharacter
     {
         public TheBrave() {
-            Characteristic = new string[]{"無", "人間"};
+            Hp         = 15;
+            AttackPont = 1;
+            Characteristices = new Characteristic[] {
+                StudyInterface.Characteristic.noAttribute, 
+                StudyInterface.Characteristic.human
+            };
+            BattleCharacter myself = this;
+            Slots = new Slot[]{new Slot(ref myself), 
+                               new Slot(ref myself), 
+                               new Slot(ref myself), 
+                               new Slot(ref myself)
+            };
 		}
     }
 }
