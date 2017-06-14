@@ -6,6 +6,7 @@ namespace StudyInterface
         darknessAttributesSpecialAttack,
         pairMagicalPower,
         noAttribute,
+        fireAttribute,
         human
     }
     public interface ICharacteristic

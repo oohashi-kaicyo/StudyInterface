@@ -4,7 +4,7 @@ namespace StudyInterface
 {
     public class JourneySword: IWeapon
     {
-        public Characteristic[] Characteristices { get; set; }
+        public Characteristic[] Characteristices {get; set;}
 		public int AttackPont { get; }
 		public JourneySword() {
             AttackPont = 1;
