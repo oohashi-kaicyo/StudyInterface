@@ -8,6 +8,7 @@ namespace StudyInterface
         noAttribute,
         fireAttribute,
         thunderAttribute,
+        Machinery,
         human
     }
     public interface ICharacteristic
