@@ -8,8 +8,8 @@ namespace StudyInterface
             Hp         = 15;
             AttackPont = 1;
             Characteristices = new Characteristic[] {
-                StudyInterface.Characteristic.noAttribute, 
-                StudyInterface.Characteristic.human
+                Characteristic.noAttribute, 
+                Characteristic.human
             };
             BattleCharacter myself = this;
             Slots = new Slot[]{new Slot(ref myself), 
