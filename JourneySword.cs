@@ -8,7 +8,7 @@ namespace StudyInterface
 		public int AttackPont { get; }
 		public JourneySword() {
             AttackPont = 1;
-            Characteristices = new Characteristic[] {Characteristic.noAttribute};
+            Characteristices = new Characteristic[] {Characteristic.noAttribute, Characteristic.thunderAttribute};
         }
     }
 }

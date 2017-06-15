@@ -7,6 +7,7 @@ namespace StudyInterface
         pairMagicalPower,
         noAttribute,
         fireAttribute,
+        thunderAttribute,
         human
     }
     public interface ICharacteristic
