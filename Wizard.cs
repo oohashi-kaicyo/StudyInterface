@@ -12,6 +12,8 @@ namespace StudyInterface
         public int MagicPoint { get; private set; }
         public IMagic SelectMaigic { get; set; }
 
+        public IMagic SelectMaigic { get; set; }
+
         public Wizard() {
 			Hp = 10;
 			AttackPont = 0;
