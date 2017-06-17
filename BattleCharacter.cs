@@ -6,7 +6,7 @@ namespace StudyInterface
     {
         public  int              Hp               { get; set; }
 		public  int              Level            { get; set; }
-        // FIXME: 手のないキャラクターの存在を考慮していない
+        // XXX: 手のないキャラクターの存在を考慮していない
 		public  IWeapon          GrabedWeapon     { get; set; }
         public  Characteristic[] Characteristices { get; set; }
         public  Slot[]           Slots            { get; set; }

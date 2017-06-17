@@ -3,6 +3,6 @@ namespace StudyInterface
 {
     public interface IMagic
     {
-        
+        int MagicPoint { get; }
     }
 }
