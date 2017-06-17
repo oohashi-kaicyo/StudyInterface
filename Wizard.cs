@@ -2,8 +2,13 @@
 using System;
 namespace StudyInterface
 {
-    public class Wizard: BattleCharacter
+    /// <summary>
+    /// バトルキャラクター「魔法使い」の為のクラス．
+    /// 魔法が使える．
+    /// </summary>
+    public class Wizard : BattleCharacter
     {
+        public IMagic[] MagicList { get; private set; }
         public Wizard() {
 			Hp = 10;
 			AttackPont = 0;
@@ -18,6 +23,9 @@ namespace StudyInterface
 							   new Slot(ref myself),
                                new Slot(ref myself),
 			};
+            MagicList = new IMagic[4];
+            MagicList[0] = new FireBall();
+            MagicList[1] = new FireBolt();
         }
     }
 }

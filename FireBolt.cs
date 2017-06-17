@@ -1,10 +1,7 @@
 ﻿using System;
 namespace StudyInterface
 {
-    public class FireBolt
-    {
-        : IAttackMagic
-    {
+    public class FireBolt: IMagic, IAttackMagic {
         public int AttackPont { get; set; }
 		public Characteristic[] Characteristices { get; set; }
 		public FireBolt() {

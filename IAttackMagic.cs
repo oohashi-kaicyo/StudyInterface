@@ -1,7 +1,7 @@
 ﻿using System;
 namespace StudyInterface
 {
-    public interface IAttackMagic: IAttackPoint
+    public interface IAttackMagic: IMagic, IAttackPoint
     {
     }
 }
