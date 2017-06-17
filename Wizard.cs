@@ -9,9 +9,7 @@ namespace StudyInterface
     public class Wizard : BattleCharacter, IUseMagic
     {
         public IMagic[] MagicList { get; private set; }
-
         public int MagicPoint { get; private set; }
-
         public IMagic SelectMaigic { get; set; }
 
         public Wizard() {
