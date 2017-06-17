@@ -12,6 +12,8 @@ namespace StudyInterface
 
         public int MagicPoint { get; private set; }
 
+        public IMagic SelectMaigic { get; set; }
+
         public Wizard() {
 			Hp = 10;
 			AttackPont = 0;
@@ -31,18 +33,18 @@ namespace StudyInterface
             MagicList[1] = new FireBolt();
         }
 
-        public void UseMagic(IMagic magic) {
+        public void UseMagic() {
 			Func<bool> isLearnedMagic = () => {
 				foreach (IMagic learnedMagic in MagicList) {
 					// XXX: Nullの場合，true?false?
-					if (learnedMagic?.GetType() == magic.GetType()) {
+					if (learnedMagic?.GetType() == SelectMaigic.GetType()) {
 						return true;
 					}
 				}
 				return false;
 			};
             Func<bool> isEnoughMagicPoint = () => {
-                return magic.MagicPoint > MagicPoint;
+                return SelectMaigic.MagicPoint > MagicPoint;
 			};
 		    if(!isLearnedMagic()) {
                 // TODO: 例外処理
@@ -52,11 +54,16 @@ namespace StudyInterface
 				// TODO: 例外処理
 				return;
             }
-            MagicPoint -= magic.MagicPoint;
-            if(magic.GetType() == typeof(IAttackMagic)) {
-                // TODO: 攻撃魔法だった時のキャラクターへの未実装
+            MagicPoint -= SelectMaigic.MagicPoint;
+            SelectMaigic = SelectMaigic;
+            if(SelectMaigic.GetType() == typeof(IAttackMagic)) {
+                return;
             }
-            throw new NotImplementedException();
         }
+		public void UseAttackMagic(ref BattleCharacter[] enemies) {
+            UseMagic();
+            BattleCharacter myself = this;
+            Damage damage = new Damage(ref myself, ref enemies);
+		}
     }
 }

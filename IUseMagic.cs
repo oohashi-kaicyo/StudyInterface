@@ -5,6 +5,7 @@ namespace StudyInterface
     {
         IMagic[] MagicList { get; }
         int MagicPoint { get; }
-        void UseMagic(IMagic magic);
+        IMagic SelectMaigic { get; }
+        void UseMagic();
     }
 }
