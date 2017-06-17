@@ -12,6 +12,8 @@ namespace StudyInterface
 
         public int MagicPoint { get; private set; }
 
+        public IMagic SelectMaigic { get; set; }
+
         public Wizard() {
 			Hp = 10;
 			AttackPont = 0;
@@ -53,10 +55,15 @@ namespace StudyInterface
 				return;
             }
             MagicPoint -= magic.MagicPoint;
+            SelectMaigic = magic;
             if(magic.GetType() == typeof(IAttackMagic)) {
-                // TODO: 攻撃魔法だった時のキャラクターへの未実装
+                return;
             }
-            throw new NotImplementedException();
         }
+		public void UseAttackMagic(IMagic magic, ref BattleCharacter[] enemies) {
+			UseMagic(magic);
+            BattleCharacter myself = this;
+            Damage damage = new Damage(ref myself, ref enemies);
+		}
     }
 }
